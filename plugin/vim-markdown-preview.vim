@@ -120,6 +120,8 @@ function! Vim_Markdown_Preview_Local()
   elseif g:vim_markdown_preview_perl == 1
     call system('Markdown.pl "' . b:curr_file . '" > vim-markdown-preview.html')
   elseif g:vim_markdown_preview_pandoc == 1
+	"" fyu
+	""--- pandoc with mathjax and github css ---
     " call system('pandoc --standalone --mathjax "' . b:curr_file . '" > vim-markdown-preview.html')
     call system('pandoc --standalone --mathjax --metadata pagetitle="markdown-preview" -c https://fenggeorgeyu.github.io/css-templates/github.css "' . b:curr_file . '" > vim-markdown-preview.html')
   else
